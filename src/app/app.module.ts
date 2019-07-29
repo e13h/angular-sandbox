@@ -7,20 +7,25 @@ import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { SummaryPipe } from './summary.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [ // this is where we add all the components that are a part of this module
     AppComponent,
     CoursesComponent,
     CourseComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoriteComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [
-    CoursesService
+    CoursesService,
+    PanelComponent
   ], // register all dependencies that the module depends/relies on
   bootstrap: [AppComponent]
 })

@@ -1,18 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { stringify } from 'querystring';
 
 @Pipe({
   name: 'summary'
 })
 export class SummaryPipe implements PipeTransform {
 
-  transform(value: string, limit?: number) {
+  transform(value: string, limit?: number, appendEllipses?: boolean) {
     if (!value) {
       return null;
     }
-    console.log(value.length);
-    console.log(value.substr(0, 10));
-    let actualLimit = (limit) ? limit : 50;
-    return value.substr(0, actualLimit) + '...';
+    let actualLimit = (limit) ? limit : value.length;
+    let extension = (appendEllipses) ? "..." : "";
+    return value.substr(0, actualLimit) + extension;
   }
 
 }

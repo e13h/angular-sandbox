@@ -4,20 +4,17 @@
         {{ course }}
     </li>
 </ul>
-<img [src]="imageUrl" />
-<table>
-    <tr>
-        <td [attr.colspan]="colSpan"></td>
-    </tr>
-</table>
-<button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)">Save</button>
-<input [(ngModel)]="email" (keydown.enter)="onKeyUp()" />
-<br/>
-{{ course.title}} <br/>
-{{ course.students | number }} <br/>
-{{ course.rating | number:'1.0-1' }} <br/>
-{{ course.price | currency:'PER':'symbol' }} <br/>
-{{ course.releaseDate | date:'shortDate' }} <br/>
-<br/>
-<br/>
-{{ loremIpsum | summary:10 }}
+<div>
+    <input [(ngModel)]="email" (keydown.enter)="onKeyUp()" /><br />
+    <button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)">Save</button><br />
+</div>
+{{ course.title}} <br />
+{{ course.students | number }} <br />
+{{ course.rating | number:'1.0-1' }} <br />
+{{ course.price | currency:'PER':'symbol' }} <br />
+{{ course.releaseDate | date:'shortDate' }} <br />
+<br />
+<div>
+    {{ (showAllText) ? loremIpsum : (loremIpsum | summary:200:false) }}
+    <a href="#" class="card-link" (click)="onShowMoreClick()">{{ (showAllText) ? "Show less..." : "Show more..." }}</a>
+</div>

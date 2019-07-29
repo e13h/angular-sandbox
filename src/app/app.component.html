@@ -1,2 +1,9 @@
-<h1>Angular</h1>
-<courses></courses>
+<bootstrap-panel [listItems]="courses" [topImageUrl]="imageUrl">
+    <ng-container class="header">Angular</ng-container>
+    <ng-container class="body">
+        <courses></courses>
+    </ng-container>
+    <ng-container class="body2">
+        <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></favorite>
+    </ng-container>
+</bootstrap-panel>

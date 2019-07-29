@@ -1,0 +1,28 @@
+<div class="col-sm-6">
+    <div class="card" id="card">
+        <img class="card-img-top" id="imageTop" [src]="_imageUrl" alt="Card image cap" />
+        <div class="card-header">
+            <ng-content select=".header"></ng-content>
+        </div>
+        <div class="card-body">
+            <ng-content select=".body"></ng-content>
+        </div>
+        <div *ngIf="_listItems.length > 0; then coursesList else noCourses"></div>
+        <ng-template #coursesList>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let listItem of _listItems">{{ listItem }}</li>
+            </ul>
+        </ng-template>
+        <ng-template #noCourses>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">No courses yet</li>
+            </ul>
+        </ng-template>
+        <div class="card-body">
+            <ng-content select=".body2"></ng-content>
+        </div>
+        <div class="card-footer" id="footer">
+            <small class="text-muted" id="timeSinceUpdate">Just updated</small>
+        </div>
+    </div>
+</div>
