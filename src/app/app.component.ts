@@ -16,6 +16,7 @@ export class AppComponent {
     isFavorite: false
   };
   imageUrl = "http://placekitten.com/500/200";
+  viewMode = 'card';
 
   constructor(service: CoursesService) {
     this.courses = service.getCourses();
