@@ -1,0 +1,18 @@
+<div class="card-deck col-sm-3">
+    <div *ngFor="let case of cases; index as i">
+        <div class="card">
+            <div class="card-header">
+                {{ i }} - {{ case.caseNumber }}
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ case.name }}</li>
+                    <li class="list-group-item">{{ case.location }}</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Created on {{ case.dateOccurredOn.toDateString() }}</small>
+            </div>
+        </div>
+    </div>
+</div>

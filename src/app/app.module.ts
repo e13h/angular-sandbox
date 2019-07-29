@@ -9,6 +9,9 @@ import { CoursesService } from './courses.service';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PanelComponent } from './panel/panel.component';
+import { CaseComponent } from './case/case.component';
+import { CaseListComponent } from './case-list/case-list.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [ // this is where we add all the components that are a part of this module
@@ -17,7 +20,10 @@ import { PanelComponent } from './panel/panel.component';
     CourseComponent,
     SummaryPipe,
     FavoriteComponent,
-    PanelComponent
+    PanelComponent,
+    CaseComponent,
+    CaseListComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

@@ -21,13 +21,7 @@
         </bootstrap-panel>
     </div>
     <div *ngSwitchCase="'list'">
-        <ng-container class="header">Angular</ng-container>
-        <ng-container class="body">
-            <courses></courses>
-        </ng-container>
-        <ng-container class="body2">
-            <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></favorite>
-        </ng-container>
+        <case-list></case-list>
     </div>
-    <div *ngSwitchDefault>Other</div>
+    <div *ngSwitchDefault>Error...switch default</div>
 </div>
